@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anwar | Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f5f5;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:black;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8%;
+    z-index:1000;
+}
+
+.nav h2{
+    font-size:30px;
+}
+
+.nav-link{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-link a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    transition:.3s;
+}
+
+.nav-link a:hover{
+    color:#3c847f;
+}
+
+
+section{
+    min-height:100vh;
+    padding:90px 10%;
+}
+
+
+#home{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+#home img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #3c847f;
+    margin-bottom:20px;
+    transition:.4s;
+}
+
+#home img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #3c847f;
+}
+
+#home h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+#home h3{
+    font-size:28px;
+    color:#3c847f;
+    margin-bottom:20px;
+}
+
+#home span{
+    color:#3c847f;
+}
+
+#home p{
+    max-width:700px;
+    line-height:1.8;
+    font-size:18px;
+    color:#444;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 30px;
+    border:none;
+    border-radius:6px;
+    background:#076861;
+    transition:.3s;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#3c847f;
+}
+
+button a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    
+}
+
+
+#about{
+    min-height:100vh;
+    padding:100px 10%;
+    background:#fff;
+}
+
+#about h2{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:40px;
+}
+
+.about-content{
+    width:70%;
+    margin:0 auto;
+}
+
+.about-content p{
+    font-size:20px;
+    line-height:1.8;
+    color:#555;
+    text-align:justify;
+    margin-bottom:20px;
+}
+
+.about-content span{
+    color:#3c847f;
+    font-weight:bold;
+}
+#about h2,
+#skills h2,
+#projects h2,
+#contact h2
+{
+    margin-bottom: 20px;
+    font-size:30px;
+    color:#333;
+    text-align: center;
+    
+}
+#projects{
+    min-height:100vh;
+    padding:100px 10%;
+    background:#fff;
+}
+#skills{
+    min-height:100vh;
+    padding:100px 10%;
+    background:#f5f5f5;
+}
+
+.skills-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.skill-card{
+    width:170px;
+    height:190px;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transition:0.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.skill-card img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.skill-card h4{
+    font-size:20px;
+    color:#333;
+}
+#projects{
+    min-height:100vh;
+    padding:100px 10%;
+    background:#fff;
+}
+
+.project-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.project-card{
+    width:400px;
+    background:#f5f5f5;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.project-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.project-card h3{
+    margin:15px 0;
+    color:#076861;
+    font-size:22px;
+}
+
+.project-card p{
+    color:#555;
+    line-height:1.6;
+    text-align:justify;
+}
+
+.project-card h4{
+    margin:15px 0 10px;
+    color:#333;
+}
+#contact{
+    min-height:100vh;
+    padding:100px 10%;
+    background:#f5f5f5;
+}
+
+#contact h2{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:40px;
+    color:#333;
+}
+
+.contact-box{
+    width:500px;
+    margin:0 auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.contact-box p{
+    font-size:18px;
+    margin:18px 0;
+    color:#555;
+}
+
+.contact-box a{
+    color:#076861;
+    text-decoration:none;
+}
+
+.contact-box a:hover{
+    text-decoration:underline;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav class="nav">
+
+<h2>Anwar</h2>
+
+<ul class="nav-link">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section id="home">
+
+<img src="img.jpeg" alt="Profile">
+
+<h1>Hello, I'm <span>Anwar A</span></h1>
+
+<h3>Frontend Developer</h3>
+
+<p>
+I'm a passionate Frontend Developer who enjoys creating modern,
+responsive, and user-friendly websites. I specialize in HTML, CSS,
+JavaScript and continuously explore new technologies to build
+attractive and interactive web applications with excellent user
+experiences.
+</p>
+
+<button>
+<a href="ANWARCV (1).pdf" target="_blank">Download CV</a>
+</button>
+
+</section>
+
+<section id="about">
+
+    <h2>About Me</h2>
+    <div class="about-content">
+        <p>
+            Hello! I'm <span>Anwar A</span>, a passionate Frontend Developer
+            and BCA student at Saveetha College of Liberal Arts and Sciences.
+            I enjoy creating responsive and user-friendly websites using
+            HTML, CSS, JavaScript, and continuously improving my web
+            development skills through hands-on projects.
+        </p>
+
+        <p>
+            As a fresher, I am eager to learn new technologies, work on
+            real-world projects, and gain industry experience. I am a
+            quick learner, a good team player, and always ready to take
+            on new challenges that help me grow as a developer.
+        </p>
+    </div>
+
+
+
+</section>
+
+<section id="skills">
+
+    <h2>Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <img src="html-5.png" alt="HTML">
+            <h4>HTML</h4>
+        </div>
+
+        <div class="skill-card">
+            <img src="css-3.png" alt="CSS">
+            <h4>CSS</h4>
+        </div>
+
+        <div class="skill-card">
+            <img src="java-script.png" alt="JavaScript">
+            <h4>JavaScript</h4>
+        </div>
+
+        <div class="skill-card">
+            <img src="bootstrap.png" alt="Bootstrap">
+            <h4>Bootstrap</h4>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="project-container">
+
+        <div class="project-card">
+            <img src="cricket.png" alt="Project">
+
+            <h3>Cricket Player Injury Risk Prediction</h3>
+
+            <p>
+                Built a Machine Learning model to predict cricket player injury risk using Decision
+                 Tree and Artificial Neural Network with improved prediction accuracy.
+            </p>
+
+            
+
+        </div>
+         <div class="project-card">
+
+        <img src="accuracy.png" alt="Cricket Match Prediction">
+
+        <h3>Cricket Match Outcome Prediction Using LR & SVM</h3>
+
+        <p>
+            Developed a Machine Learning model to predict cricket match outcomes
+            using Logistic Regression and Support Vector Machine (SVM). The model
+            achieved better prediction accuracy by comparing both algorithms.
+        </p>
+
+    </div>
+
+    </div>
+
+</section>
+<section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-box">
+        <p><strong>Name:</strong> Anwar A</p>
+
+        <p><strong>Email:</strong> anwar092007@gmail.com</p>
+
+        <p><strong>Phone:</strong> +91 7871046026</p>
+
+        <p><strong>Location:</strong> Sriperumbudur, Chennai</p>
+
+        <p><strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/anwar-a-561652364?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+                linkedin.com
+            </a>
+        </p>
+
+        <p><strong>GitHub:</strong>
+            <a href="https://github.com/Anwar0027" target="_blank">
+                github.com/Anwar0027
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+</body>
+</html>
